@@ -10,7 +10,11 @@ const digimonSchema = new Schema({
     description: String,
     personality: String,
     stage: String,
-    attribute: String
+    attribute: String,
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 });
 
 module.exports = mongoose.model('Digimon', digimonSchema);
