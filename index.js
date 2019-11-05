@@ -108,14 +108,17 @@ app.use('/api', graphqlHttp({
                 personality: args.digimonInput.personality,
                 stage: args.digimonInput.stage,
                 attribute: args.digimonInput.attribute,
-                createdBy: "5dc19c14525bc37d12c19279"
+                createdBy: '5dc1b3ecb2f39a7f621456b8'
             });
             let createdDigimon;
             return digimon
             .save()
             .then(result => {
-                createdDigimon = { ...result._doc}
-                return User.findById('5dc19c14525bc37d12c19279')
+                createdDigimon = { 
+                    ...result._doc, 
+                    createdBy: user.bind(this, result._doc.createdBy)
+                };
+                return User.findById('5dc1b3ecb2f39a7f621456b8');
             })
             .then(user => {
                 if (!user) {

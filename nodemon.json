@@ -2,6 +2,6 @@
     "env": {
         "MONGO_USER":"jiminiiik",
         "MONGO_PASS":"XJnbcXbNfs2xPe2h",
-        "MONGO_DB":"digimon-databse"
+        "MONGO_DB":"digimon-database"
     }
 }
